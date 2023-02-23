@@ -249,6 +249,7 @@ github-release:
 		--branch=$(RELEASE_BRANCH) \
 		--overrideNumber=$(OVERRIDE_NUMBER)
 
+
 .PHONY: minor-release-foundation
 minor-release-foundation:
 	go vet ./cmd/release/minor
