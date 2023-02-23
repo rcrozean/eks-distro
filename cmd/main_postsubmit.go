@@ -57,6 +57,7 @@ func main() {
 	releaseBranch := flag.String("release-branch", "1-19", "Release branch to test")
 	releaseVariant := flag.String("release-variant", "", "Release variant to test")
 	release := flag.String("release", "1", "Release to test")
+
 	region := flag.String("region", "us-west-2", "AWS region to use")
 	accountId := flag.String("account-id", "", "AWS Account ID to use")
 	imageRepo := flag.String("image-repo", "", "Container image repository")
