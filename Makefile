@@ -228,6 +228,14 @@ update-prod-release-number:
 .PHONY: update-release-numbers
 update-release-numbers: update-dev-release-number update-prod-release-number
 
+.PHONY: update-all-dev-release-numbers
+update-all-dev-release-numbers:
+	for r_b in $(SUPPORTED_RELEASE_BRANCHES); do RELEASE_BRANCH=$$r_b $(MAKE) update-dev-release-number; done
+
+.PHONY: update-all-prod-release-numbers
+update-all-prod-release-numbers:
+	for r_b in $(SUPPORTED_RELEASE_BRANCHES); do RELEASE_BRANCH=$$r_b $(MAKE) update-prod-release-number; done
+
 .PHONY: update-all-release-numbers
 update-all-release-numbers:
 	for r_b in $(SUPPORTED_RELEASE_BRANCHES); do RELEASE_BRANCH=$$r_b $(MAKE) update-release-numbers; done
